@@ -29,8 +29,16 @@ const InputForm = () => {
 
   return (
     <>
-      <input type="number" onChange={changeChosenAmount} value={chosenAmount} />
-      <select onChange={changeChosenCurrency} value={chosenCurrency}>
+      <input
+        className="inputAmount"
+        type="number"
+        onChange={changeChosenAmount}
+        value={chosenAmount}
+      />
+      <select
+        className="selectCurrency"
+        onChange={changeChosenCurrency}
+        value={chosenCurrency}>
         {currencies.map(({ code }) => (
           <option key={code} value={code}>
             {code}
@@ -38,7 +46,7 @@ const InputForm = () => {
         ))}
         ;
       </select>
-      <span>={calculatedChosenCurrency()}</span>
+      <div className="resultDiv">={calculatedChosenCurrency()}</div>
     </>
   );
 };
