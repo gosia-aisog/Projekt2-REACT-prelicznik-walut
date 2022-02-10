@@ -1,6 +1,5 @@
 import React from "react";
-import InputStyle from "./style/InputFormStyle";
-import SelectStyle from "./style/InputFormStyle";
+import { InputStyle, SelectStyle } from "./style/InputFormStyle";
 import { useState, useEffect } from "react";
 
 const InputForm = () => {

@@ -14,4 +14,4 @@ const AppHeaderStyle = {
   color: "white",
 };
 
-export default { AppStyle, AppHeaderStyle };
+export { AppStyle, AppHeaderStyle };
