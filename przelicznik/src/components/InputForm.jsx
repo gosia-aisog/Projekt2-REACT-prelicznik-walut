@@ -46,7 +46,7 @@ const InputForm = () => {
         ))}
         ;
       </select>
-      <div className="resultDiv">={calculatedChosenCurrency()}</div>
+      <div className="resultDiv">to {calculatedChosenCurrency()}</div>
     </>
   );
 };
