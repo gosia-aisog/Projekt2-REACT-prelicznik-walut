@@ -1,4 +1,4 @@
-import { AppStyle, AppHeaderStyle } from "./AppStyles";
+import { AppStyle, AppHeaderStyle } from "./components/style/AppStyles";
 
 import ConverterApp from "./components/ConverterApp";
 
