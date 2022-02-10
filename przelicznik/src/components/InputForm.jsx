@@ -1,4 +1,6 @@
 import React from "react";
+import InputStyle from "./style/InputFormStyle";
+import SelectStyle from "./style/InputFormStyle";
 import { useState, useEffect } from "react";
 
 const InputForm = () => {
@@ -30,13 +32,13 @@ const InputForm = () => {
   return (
     <>
       <input
-        className="inputAmount"
+        style={InputStyle}
         type="number"
         onChange={changeChosenAmount}
         value={chosenAmount}
       />
       <select
-        className="selectCurrency"
+        style={SelectStyle}
         onChange={changeChosenCurrency}
         value={chosenCurrency}>
         {currencies.map(({ code }) => (
@@ -46,7 +48,7 @@ const InputForm = () => {
         ))}
         ;
       </select>
-      <div className="resultDiv">to {calculatedChosenCurrency()}</div>
+      <div>to {calculatedChosenCurrency()}</div>
     </>
   );
 };

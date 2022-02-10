@@ -1,13 +1,13 @@
-// import logo from './logo.svg';
-import "./App.css";
+import AppStyle from "./AppStyles";
+import AppHeaderStyle from "./AppStyles";
+
 import ConverterApp from "./components/ConverterApp";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
+    <div style={AppStyle}>
+      <header style={AppHeaderStyle}>
         <ConverterApp></ConverterApp>
-        {/* <img src={logo} className="App-logo" alt="logo" /> */}
       </header>
     </div>
   );
