@@ -9,6 +9,7 @@ const InputForm = () => {
   const [chosenAmount, setChosenAmount] = useState(initialChosenAmount);
   const [chosenCurrency, setChosenCurrency] = useState(initialChosenCurrency);
   const [currencies, setCurrencies] = useState(initialCurrencies);
+  // const possibleCurrencies=["EUR", "CHF", "USD"]
   const NBP_API = "http://api.nbp.pl/api/exchangerates/tables/a/?format=json";
 
   useEffect(() => {
