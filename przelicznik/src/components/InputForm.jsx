@@ -18,19 +18,26 @@ const InputForm = () => {
       .then((response) => response.json())
       .then((data) => {
         setCurrencies(data[0].rates);
+        //   setCurrencies((currencies) =>
+        //     currencies.filter((x) => x.code in ("USD", "EUR", "CHF"))
+        //   );
+        //   console.log(currencies);
+        // })
+        // const myCurrency = () => {
+        //   data[0].rates.map((object) => {
+        //     object.code === "USD" ||
+        //     object.code === "EUR" ||
+        //     object.code === "CHF"
+        //       ? object
+        //       : [];
+        //     console.log(myCurrency());
+        //   });
+        // };
       })
-      //   data[0].rates.map((object) => {
-      //     object.code === "USD" ||
-      //     object.code === "EUR" ||
-      //     object.code === "CHF"
-      //       ? setCurrencies(object)
-      //       : console.log(object);
-      //     console.log(setCurrencies);
-      //   });
-      // })
 
       .catch((error) => console.log(error));
   }, []);
+
   const calculatedChosenCurrency = () => {
     const chosenCurrencyValue = currencies.find(
       ({ code }) => code === chosenCurrency
