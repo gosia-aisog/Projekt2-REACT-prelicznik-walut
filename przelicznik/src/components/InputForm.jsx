@@ -9,30 +9,17 @@ const InputForm = () => {
   const [chosenAmount, setChosenAmount] = useState(initialChosenAmount);
   const [chosenCurrency, setChosenCurrency] = useState(initialChosenCurrency);
   const [currencies, setCurrencies] = useState(initialCurrencies);
-  // const [anotherCurrencies, setAnotherCurrencies] = useState(initialCurrencies);
-  // const [anotherCurrencies, setAnothercurrencies];
   const NBP_API = "http://api.nbp.pl/api/exchangerates/tables/a/?format=json";
 
   useEffect(() => {
     fetch(NBP_API)
       .then((response) => response.json())
       .then((data) => {
-        setCurrencies(data[0].rates);
-        //   setCurrencies((currencies) =>
-        //     currencies.filter((x) => x.code in ("USD", "EUR", "CHF"))
-        //   );
-        //   console.log(currencies);
-        // })
-        // const myCurrency = () => {
-        //   data[0].rates.map((object) => {
-        //     object.code === "USD" ||
-        //     object.code === "EUR" ||
-        //     object.code === "CHF"
-        //       ? object
-        //       : [];
-        //     console.log(myCurrency());
-        //   });
-        // };
+        setCurrencies(
+          data[0].rates.filter(({ code }) =>
+            ["EUR", "CHF", "USD"].includes(code)
+          )
+        );
       })
 
       .catch((error) => console.log(error));
